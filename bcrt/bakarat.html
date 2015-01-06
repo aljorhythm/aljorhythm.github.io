@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+</head>
+<body>
+<style>
+@font-face {
+    font-family: baccarat;
+    src: url(baccarat.ttf);
+}
+button{
+	background: #D46A6A;
+	padding:6px;
+	margin:2px;
+	border: 0px;
+	font-family: Arial;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+button:hover{
+	background: #FFAAAA;
+	cursor:pointer;
+}
+html{
+	background: #AA3939;
+}
+body{
+	font-family: baccarat;
+	padding-top: 30px;
+	padding-left:40px;
+}
+#results {
+	border-collapse:collapse;
+	margin-bottom:5px;
+}
+#results td{
+	border:1px solid black;
+	padding: 5px;
+	width:20px;
+}
+#results span{
+	color:#801515;
+}
+#results span:hover{
+	color:#D46A6A;
+	cursor:pointer;
+}
+#numbers{
+	color:#FFAAAA;
+}
+#left{
+	color:#FFAAAA;
+}
+.game-div{
+float:left;
+position:relative;
+margin-right: 20px;
+}
+</style>
+<script>
+var CARDS = 'AKQT1234567890';
+var games = {};
+CARDS = CARDS.split('');
+
+var Game = function(identifier){
+	var this_ = this;
+    for(index in CARDS){
+        this.data[CARDS[index]] = 16;
+    }
+	this.identifier = identifier;
+	this.$div = $("<div class='game-div'>")
+		.attr('id','div-' + identifier)
+		.append('<h2>' + identifier + '</h2>')
+		.append($("<table id='results'>"));
+	var $header = $("<tr id='header'>");
+	var $span;
+	for(card in this.data){
+		$span = $("<span>")
+			.attr('identifier',identifier)
+			.html(card).click(function(){
+				click(this);
+			});
+		$header.append($("<td>").append($span));
+	}
+	this.$div.find("#results").append($header); 
+	$numbers = $("<tr id='numbers'>");
+	for (card in this.data){
+		$numbers.append($("<td id='n-" + card + "'>")
+							.html(this.data[card])
+						);
+	}
+	this.$div.find("#results").append($numbers);
+	this.$div.append("Total left:<div id='left'></div><br>");
+	this.$div.append($("<button>")
+						.html('Restart')
+						.click(function(){
+							this_.restart().refreshDisplay();
+						})
+					)
+			.append($("<button>")
+						.html('Remove')
+						.click(function(){
+							this_.$div.remove();
+						})
+					);
+	this.refreshDisplay();
+};
+Game.prototype.restart = function(){
+	for(index in CARDS){
+        this.data[CARDS[index]] = 16;
+    }
+	return this;
+};
+Game.prototype.data = {};
+Game.prototype.reduce = function(card){
+	this.data[card] = this.data[card] - 1;
+	return this;
+};
+Game.prototype.refreshDisplay = function(){
+	var total = 0;
+	for (card in this.data){
+		this.$div.find("#numbers #n-" + card).html(this.data[card]);
+		total += this.data[card];
+	}
+	this.$div.find("#left").html(total);
+};
+function newGame(identifier){
+	var game = new Game(identifier);
+	$("body").append(game.$div);
+	games[identifier] = game;
+	return game;
+} 
+function click(e){
+	games[$(e).attr('identifier')].reduce($(e).html()).refreshDisplay();
+}
+function restart(e){
+	games[$(e).attr('identifier')].restart().refreshDisplay();
+}
+$(document).ready(function(){
+	$("body").append(newGame('1').$div);
+});
+</script>
+<h1 style='color:#FFAAAA'>Track your odds</h1>
+Game name: <input type='text' id='new_game_name'/>
+<button onclick='newGame($("#new_game_name").val());'>New Game</button>
+<br>
+</body>
+</html>
