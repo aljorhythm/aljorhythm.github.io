@@ -60,14 +60,15 @@ margin-right: 20px;
 }
 </style>
 <script>
-var CARDS = 'AKQT1234567890';
+var CARDS = '123456789TJQKA';
 var games = {};
+var CARDS_STR = CARDS;
 CARDS = CARDS.split('');
 
 var Game = function(identifier){
 	var this_ = this;
-    for(index in CARDS){
-        this.data[CARDS[index]] = 16;
+    for(index in CARDS_STR){
+        this.data[CARDS_STR[index]] = 16;
     }
 	this.identifier = identifier;
 	this.$div = $("<div class='game-div'>")
