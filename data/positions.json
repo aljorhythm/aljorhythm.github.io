@@ -1,0 +1,35 @@
+{
+    "positions" : [
+        {
+            "company" : "Apple",
+            "position" : "Intern",
+            "description" : "Supply and Demand Management",
+            "skills" : [
+                "Excel",
+                "VBA for Excel",
+                "python",
+                "AppleScript",
+                "shell script",
+                "PHP",
+                "javascript",
+                "nodejs"
+            ],
+            "start-date" : "",
+            "end-date" : ""
+        },
+        {
+            "company" : "Centre for Strategic Infocomm Security",
+            "company-link" : "https://www.csit.gov.sg/",
+            "position" : "Intern",
+            "description" : "Optimizing File Transfer Over Multiple WAN Links",
+            "skills" : [
+                "c/c++",
+                "shell scripting",
+                "VMWare"
+            ]
+        },
+        {
+            "company" : "Resorts World Sentosa"
+        }
+    ]
+}

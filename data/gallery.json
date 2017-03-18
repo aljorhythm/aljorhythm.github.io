@@ -1,0 +1,15 @@
+{
+    "items" : 
+        {
+            "ReallyEzxcess" : {
+                "img" : "img/gallery/reallyezxcess.png",
+                "link" : "https://github.com/aljorhythm/ReallyEzxcess",
+                "description" : "Automation of sign in of network authenticated by captive portal"
+            },
+            "Doggify" : {
+                "img" : "img/gallery/doggify.jpg",
+                "link" : "https://github.com/aljorhythm/Doggify",
+                "description" : "Developed @ a hackathon, overlays a dog filter on images on Instagram and Facebook"
+            }
+        }
+}
