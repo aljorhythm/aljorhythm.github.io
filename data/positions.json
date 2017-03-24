@@ -1,0 +1,73 @@
+{
+    "positions" : [
+        {
+            "company" : "Apple Asia PTE LTD",
+            "position" : "Intern",
+            "description" : "Supply and Demand Process Automation",
+            "scope" : [
+                "Work on projects for process automations for planning & allocation teams",
+                "Automations include using Apple scripts to avoid manual/repetitive tasks and also to identify exceptions",
+                "Troubleshoot existing automations when issues arise",
+                "Assist planning & allocation teams in ad-hoc requests on changes in planning tools",
+                "Document automations developed"
+            ],
+            "skills" : [
+                "Excel",
+                "VBA for Excel",
+                "python",
+                "AppleScript",
+                "shell script",
+                "PHP",
+                "javascript",
+                "nodejs"
+            ],
+            "start-date" : "August 2016",
+            "end-date" : "January 2017"
+        },
+        {
+            "company" : "OangleDesign",
+            "company-link" : "http://oangledesign.com/",
+            "position" : "Freelance Web Developer",
+            "description" : "Developed frontend and backend features for web applications",
+            "skills" : [
+                "Wordpress",
+                "html/css/javascript"
+            ],
+            "start-date" : "August 2013",
+            "end-date" : "July 2016"
+        },
+        {
+            "company" : "Resorts World Sentosa",
+            "company-link" : "http://www.rwsentosa.com/language/en-US/Homepage/Attractions/UniversalStudiosSingapore",
+            "position" : "Attraction Crew",
+            "description" : "Revenge of The Mummy Crew",
+            "scope" : [
+                "Responsible for the safe operation of rides, shows and attractions",
+                "Assist guests with directions and information",
+                "Respond to guest situations and comfortable in speaking to large groups",
+                "Push down lap bars, lock down harness and ensure seat belts are securely fastened for guests"
+            ],
+            "start-date" : "April 2013",
+            "end-date" : "July 2013"
+        },
+        {
+            "company" : "Centre for Strategic Infocomm Security",
+            "company-link" : "https://www.csit.gov.sg/",
+            "position" : "Intern",
+            "description" : "Optimizing File Transfer Over Multiple WAN Links",
+            "scope" : [
+                "Algorithm Design",
+                "Network Simulation with Virtual Machines",
+                "Software Development",
+                "Project Management"
+            ],
+            "skills" : [
+                "c/c++",
+                "shell scripting",
+                "VMWare"
+            ],
+            "start-date" : "October 2012",
+            "end-date" : "December 2012"
+        }
+    ]
+}

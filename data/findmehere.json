@@ -1,0 +1,17 @@
+{
+    "findmeheres" : 
+        [
+            {
+                "img" : "img/findmehere/github.png",
+                "link" : "https://github.com/aljorhythm/"
+            },
+            {
+                "img" : "img/findmehere/linkedin.png",
+                "link" : "https://www.linkedin.com/in/joel-lim-bb199173/"
+            },
+            {
+                "img" : "img/findmehere/devpost.png",
+                "link" : "https://devpost.com/funnieguy"
+            }
+        ]
+}

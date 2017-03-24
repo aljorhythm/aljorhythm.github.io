@@ -1,0 +1,20 @@
+{
+    "educations" : [
+        {
+            "institution" : "School Of Computing, National University of Singapore",
+            "qualification" : "Bachelor's",
+            "course" : "Bachelor of Computing (Honours) in Computer Science",
+            "start-date" : "2015",
+            "end-date" : "",
+            "img" : "img/education/nus.jpg"
+        },
+        {
+            "institution" : "School of Information Technology, Nanyang Polytechnic",
+            "qualification" : "Diploma",
+            "course" : "Diploma in Information Security",
+            "start-date" : "2010",
+            "end-date" : "2013",
+            "img" : "img/education/nyp.png"
+        }
+    ]
+}
