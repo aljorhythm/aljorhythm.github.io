@@ -1,0 +1,45 @@
+{
+    "skills" : 
+        {
+            "Fullstack" : [
+                "express.js",
+                "MAMP/WAMP",
+                "Wordpress"
+            ],
+            "Frontend" : [
+                "javascript",
+                "jQuery",
+                "handlebars.js",
+                "ejs",
+                "angular.js",
+                "jade/pug"
+            ],
+            "Markup" : [
+                "html",
+                "css"
+            ],
+            "Backend" : [
+                "SQL",
+                "MySQL",
+                "MongoDB",
+                "parse.js"
+            ],
+            "Programming/Scripting Languages" : [
+                "python",
+                "javascript",
+                "VBA for Excel",
+                "AppleScript",
+                "PHP",
+                "c/c++",
+                "C#",
+                "java",
+                "shell"
+            ],
+            "Others" : [
+                "Excel",
+                "git/github",
+                "basic vim",
+                "Eclipse"
+            ]
+        }
+}

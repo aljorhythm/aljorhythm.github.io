@@ -3,13 +3,18 @@
         {
             "ReallyEzxcess" : {
                 "img" : "img/gallery/reallyezxcess.png",
-                "link" : "https://github.com/aljorhythm/ReallyEzxcess",
+                "link" : "https://github.com/aljorhythm/ReallyEzxcess#demo",
                 "description" : "Automation of sign in of network authenticated by captive portal"
             },
             "Doggify" : {
                 "img" : "img/gallery/doggify.jpg",
-                "link" : "https://github.com/aljorhythm/Doggify",
+                "link" : "https://github.com/aljorhythm/Doggify#demo",
                 "description" : "Developed @ a hackathon, overlays a dog filter on images on Instagram and Facebook"
+            },
+            "Resume/Profile Page" : {
+                "img" : "img/gallery/resume.png",
+                "link" : "https://github.com/aljorhythm/aljorhythm.github.io",
+                "description" : "This profile/resume was self-written!"
             }
         }
 }

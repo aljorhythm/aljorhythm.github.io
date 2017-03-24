@@ -14,6 +14,11 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+section h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 a {
   color: #3d6dbe;
   text-decoration: none;
@@ -22,6 +27,7 @@ a {
 a:focus,
 a:hover {
   color: #6594e0;
+  cursor: pointer;
 }
 
 p {
@@ -39,50 +45,6 @@ hr {
   border-bottom: none;
   margin-top: 3em;
   margin-bottom: 2em;
-}
-
-header {
-  background-color: #999;
-  background-image: url(img/background.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin-bottom: 4em;
-  text-align: center;
-  height: 500px;
- 
-}
-
-header img {
-  border-radius: 50%;
-  margin-top: 50px:
-  position: relative;
-  max-width: 400px;
-  max-height: 400px;
-  margin-bottom: 20px;
-}
-
-header h1 {
-  color: white;
-  font-size: 2em;
-  margin: 0;
-  letter-spacing: 1px;
-  opacity: 1;
-  text-shadow: 0 3px 0 rgba(0,0,0, 0.5);
-  position: relative;
-  font-weight: 700;
-}
-
-header p {
-  color: #fff;
-  font-size: 1.1em;
-  padding-bottom: 1.3em;
-  padding-top: .5em;
-  opacity: .9;
-  position: relative; 
 }
 
 section h1 {
@@ -221,11 +183,7 @@ footer hr {
   padding-bottom: 1em;
 }
 
-.experience h2 {
-  margin-bottom: 0;
-}
-
-.experience h2, .experience p {
+.experience p {
   text-align: center;
 }
 
@@ -317,11 +275,13 @@ footer hr {
 .spotlight a:hover {
   opacity: 1;
   cursor: pointer;
+  border-color: cadetblue;
+  color: cadetblue;
 }
 
 @media screen and (min-width: 40em) {
   .spotlight {
-    padding: 6em;
+    padding: 4em;
     text-align: left;
   }
   
@@ -332,6 +292,6 @@ footer hr {
 }
 
 .box-shadow {
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 6px 6px 5px #888888;
 }
 

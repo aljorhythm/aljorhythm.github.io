@@ -1,0 +1,52 @@
+header {
+  background-color: #999;
+  background-image: url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin-bottom: 4em;
+  text-align: center;
+  height: 550px;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  margin-top: 50px;
+  position: relative;
+  max-width: 350px;
+  max-height: 350px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  letter-spacing: 1px;
+  opacity: 1;
+  text-shadow: 0 3px 0 rgba(0,0,0, 0.5);
+  position: relative;
+  font-weight: 700;
+}
+
+header p {
+  color: #fff;
+  font-size: 1.1em;
+  padding-bottom: 1.3em;
+  padding-top: .5em;
+  opacity: .9;
+  position: relative; 
+}
+
+@media screen and (max-width: 760px) {
+    header {
+        height: 400px;
+    }
+    #profile-pic {
+        width: 60%;
+        margin-top: 20%;
+    }
+}

@@ -24,4 +24,6 @@ Webpage is a single page app
 
 # Developer notes
 
-Fill free to clone this
+This was modified from [philipcdavis](https://github.com/philipcdavis/responsive-resume/issues)'s [responsive resume](https://github.com/philipcdavis/responsive-resume).
+
+Fill free to clone this.
