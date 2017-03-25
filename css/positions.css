@@ -1,0 +1,46 @@
+.position ul.info{
+		list-style: none;
+}
+.position a{
+    color: black;
+}
+.position .position-dropdown .position-dropdown-list {
+    display: none;
+}
+.position .position-dropdown:hover > ul{
+    display: block;
+}
+.position .position-dropdown:hover > .pointer-img{
+    display: none;
+}
+.position .position-dropdown:hover .position-dropdown-mouseover{
+    font-style: italic;
+}
+.position img.pointer-img{
+    width: 10px;
+}
+.position .position-dropdown-mouseover:hover{
+    cursor: pointer;
+}
+.position .position-right > div, .position .position-position {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+.position .position-description {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.position .position-company {
+    margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+    .position h1, .position h2, .position h3 {
+        text-align: center;
+    }
+    .position .position-dropdown {
+        text-align: center;
+    }
+    .position .position-dropdown-list {
+        text-align: left;
+    }
+}

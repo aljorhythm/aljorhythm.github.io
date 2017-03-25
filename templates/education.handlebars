@@ -1,0 +1,15 @@
+<h1>Education</h1>
+{{#each educations}}
+    <div class="row">
+        <div class="grid-2">
+            <img src="{{this.img}}"/>
+            <p>
+                {{this.start-date}} - {{this.end-date}}
+            </p>
+        </div>
+        <div class="grid-4">
+            <h2>{{this.course}}</h2>
+            <h4>{{this.institution}}</h4>
+        </div>
+    </div>
+{{/each}}

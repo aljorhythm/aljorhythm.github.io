@@ -1,0 +1,29 @@
+<style>
+    .skills-table {
+        margin: 0px auto;
+        width: 30%;
+    }
+    .skills-table li{
+        list-style-type: none;
+    }
+</style>
+<!--List of skills-->
+
+<h1>Skills</h1>
+
+<table class="skills-table">
+    {{#each skills}}
+            <tr>
+                <td>{{@key}}</td>
+                <td>
+                    <ul>
+                        {{#each this}}
+                            <li>
+                                {{this}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </td>
+            </tr>
+    {{/each}}
+</table>

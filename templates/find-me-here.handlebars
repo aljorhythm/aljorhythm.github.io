@@ -1,0 +1,11 @@
+<h1>Find Me Here</h1>
+<link rel="stylesheet" href="/css/find-me-here.css" type="text/css"/>
+<ul id="find-me-heres">
+    {{#each findmeheres}}
+    <li>
+        <a href="{{this.link}}" target="_blank">
+            <img src="{{this.img}}"/>
+        </a>
+    </li>
+    {{/each}}
+</ul>

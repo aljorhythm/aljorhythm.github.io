@@ -1,0 +1,38 @@
+<link href="/css/positions.css" type="text/css" rel="stylesheet">
+<h1>Experience</h1>
+{{#each positions}}
+	<div class="position row">
+		<div class="grid-2">
+			<h2 class="position-company"><a href="{{company-link}}" target="_blank">{{company}}</a></h2>
+			<p>{{start-date}} - {{end-date}}</p>
+		</div>
+		<div class="grid-4 position-right">
+			<h2 class="position-position">{{position}}</h2>
+			<h3 class="position-description">{{description}}</h3>
+			
+			{{#if this.scope}}
+				<div class="position-dropdown">
+					<span class="position-dropdown-mouseover">Scope</span>
+					<img class="pointer-img" src="img/pointer.png">
+					<ul class="position-dropdown-list">
+						{{#each this.scope}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{/if}}
+
+			{{#if this.skills}}
+				<div class="position-dropdown">
+					<span class="position-dropdown-mouseover">Skills</span>
+					<img class="pointer-img" src="img/pointer.png">
+					<ul class="position-dropdown-list">
+						{{#each this.skills}}
+							<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			{{/if}}
+		</div>
+	</div>
+{{/each}}

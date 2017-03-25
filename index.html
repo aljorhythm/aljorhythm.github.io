@@ -22,21 +22,20 @@
 	<script>
 		var userAgentIsMobile =  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 		function renderFromJSON(dataUrl, templateSelector, targetSelector, f){
-			var source   = $(templateSelector).html()
-			var template = Handlebars.compile(source)
-			$.getJSON(dataUrl, (data) => {
-				$(targetSelector).html(template(data))
-				if(f){
-					f(data)
-				}
+			$.get(templateSelector, (source) => {
+				var template = Handlebars.compile(source)
+				$.getJSON(dataUrl, (data) => {
+					$(targetSelector).html(template(data))
+					if(f){
+						f(data)
+					}
+				})
 			})
 		}
 
 		var spotlightTemplate;
 		function initSpotlight(data){
-			if(!spotlightTemplate){
-				spotlightTemplate = Handlebars.compile($("#spotlight-template").html());
-			}
+			spotlightTemplate = Handlebars.compile($("#spotlight-template").html());
 			var $spotlight = $("#spotlight")
 			var items = data['items']
 			$galleryItems = $("#gallery a.gallery-item")
@@ -56,12 +55,13 @@
 
 		$(document).ready(() => {
 			[
-				["./data/findmehere.json", "#find-me-here-template", "#find-me-here"],
-				["./data/gallery.json", "#gallery-template", "#gallery", initSpotlight],
-				["./data/educations.json", "#education-template", "#education"],
-				["./data/skills.json", "#skills-template", "#skills"],
-				["./data/positions.json", "#positions-template", "#positions"]
-			].forEach((renderItem) => {
+				["./data/findmehere.json", "templates/find-me-here.handlebars", "#find-me-here"],
+				["./data/gallery.json", "templates/gallery.handlebars", "#gallery", initSpotlight],
+				["./data/educations.json", "templates/education.handlebars", "#education"],
+				["./data/skills.json", "templates/skills.handlebars", "#skills"],
+				["./data/positions.json", "templates/positions.handlebars", "#positions"],
+				["./data/summary.json", "templates/summary.handlebars", "#summary"]
+			].forEach((renderItem, i) => {
 				renderFromJSON(...renderItem)
 			})
 		})
@@ -79,74 +79,13 @@
 		
 		<!-- Introduction-->
 		<section class="summary">
-			<h1>Summary</h1>
-			<p>
-				Currently a Year 2 Computing major with 6 years of wide programming experience ranging from scripting to web development. 
-				Possesses strong problem-solving skills, an eye for foresight and is a self-directed learner.
-			</p>
 		</section>
 		<hr>
-		<section id="find-me-here" class="center welcome">
-			<script id="find-me-here-template" type="text/x-handlebars-template">
-				<h1>Find Me Here</h1>
-				<style>
-					ul#find-me-heres {
-						list-style: none;
-						text-align: center;
-						line-height: 0;
-					}
-					ul#find-me-heres li{
-						display: inline-block;
-						height: 30px;
-						margin-right: 20px;
-					}
-					ul#find-me-heres li a {
-						height: 100%;
-					}
-					ul#find-me-heres li img {
-						height: 100%;
-						vertical-align: middle;
-					}
-					ul#find-me-heres li:hover img {
-						height: 120%;
-					}
-					ul#find-me-heres li:not(:last-child) a:after{
-						content : "|";
-						color : black;
-					}
 
-					@media screen and (max-width: 768px) {
-						ul#find-me-here {
-							text-align: center;
-						}
-						ul#find-me-heres li {
-							display: block;
-							width: 100%;
-							height: 50px;
-						}
-						ul#find-me-heres li a:after {
-							content : none !important;
-						}
-						ul#find-me-heres li img {
-							max-width: 30%;
-							max-height: 70%;
-							vertical-align: middle;
-						}
-					}
-				</style>
-  				<ul id="find-me-heres">
-					{{#each findmeheres}}
-					<li>
-						<a href="{{this.link}}" target="_blank">
-							<img src="{{this.img}}"/>
-						</a>
-					</li>
-					{{/each}}
-				</ul>
-			</script>
+		<section id="find-me-here" class="center welcome">
 		</section>
-		
 		<hr>
+		
 	</div>
 
 	<h1 class="center">Gallery</h1>
@@ -173,15 +112,6 @@
 	<div class="container">
 		<!-- Gallery Block-->
 		<section id="gallery" class="gallery">
-			<script id="gallery-template" type="text/x-handlebars-template">
-				<div class="row">
-					{{#each items}}
-						<a class="gallery-item" name="{{@key}}" target="_blank" href="{{this.link}}">
-							<img src="{{this.img}}" class="grid-2"/>
-						</a>
-					{{/each}}
-				</div>
-			</script>
 		</section>
 	</div> 
 	<!-- End container-->
@@ -191,154 +121,19 @@
 
 		<hr>
 		<section id="education" class="education">
-			<script id="education-template" type="text/x-handlebars-template">
-				<h1>Education</h1>
-				{{#each educations}}
-					<div class="row">
-						<div class="grid-2">
-							<img src="{{this.img}}"/>
-							<p>
-								{{this.start-date}} - {{this.end-date}}
-							</p>
-						</div>
-						<div class="grid-4">
-							<h2>{{this.course}}</h2>
-							<h4>{{this.institution}}</h4>
-						</div>
-					</div>
-				{{/each}}
-			</script>
 		</section>
 		
 		<hr>
-			
 		<!--Experience Tables-->
 		<section id="positions" class="experience">
-			<script id="positions-template" type="text/x-handlebars-template">
-				<style>
-					.position ul.info{
-						list-style: none;
-					}
-					.position a{
-						color: black;
-					}
-					.position .position-dropdown .position-dropdown-list {
-						display: none;
-					}
-					.position .position-dropdown:hover > ul{
-						display: block;
-					}
-					.position .position-dropdown:hover > .pointer-img{
-						display: none;
-					}
-					.position .position-dropdown:hover .position-dropdown-mouseover{
-						font-style: italic;
-					}
-					.position img.pointer-img{
-						width: 10px;
-					}
-					.position .position-dropdown-mouseover:hover{
-						cursor: pointer;
-					}
-					.position .position-right > div, .position .position-position {
-						margin-bottom: 10px;
-						margin-top: 0;
-					}
-					.position .position-description {
-						margin-bottom: 20px;
-						margin-top: 0;
-					}
-					.position .position-company {
-						margin-bottom: 0;
-					}
-					@media screen and (max-width: 768px) {
-						.position h1, .position h2, .position h3 {
-							text-align: center;
-						}
-						.position .position-dropdown {
-							text-align: center;
-						}
-						.position .position-dropdown-list {
-							text-align: left;
-						}
-					}
-				</style>
-				<h1>Experience</h1>
-				{{#each positions}}
-					<div class="position row">
-						<div class="grid-2">
-							<h2 class="position-company"><a href="{{company-link}}" target="_blank">{{company}}</a></h2>
-							<p>{{start-date}} - {{end-date}}</p>
-						</div>
-						<div class="grid-4 position-right">
-							<h2 class="position-position">{{position}}</h2>
-							<h3 class="position-description">{{description}}</h3>
-							
-							{{#if this.scope}}
-								<div class="position-dropdown">
-									<span class="position-dropdown-mouseover">Scope</span>
-									<img class="pointer-img" src="img/pointer.png">
-									<ul class="position-dropdown-list">
-										{{#each this.scope}}
-											<li>{{this}}</li>
-										{{/each}}
-									</ul>
-								</div>
-							{{/if}}
-
-							{{#if this.skills}}
-								<div class="position-dropdown">
-									<span class="position-dropdown-mouseover">Skills</span>
-									<img class="pointer-img" src="img/pointer.png">
-									<ul class="position-dropdown-list">
-										{{#each this.skills}}
-											<li>{{this}}</li>
-										{{/each}}
-									</ul>
-								</div>
-							{{/if}}
-						</div>
-					</div>
-				{{/each}}
-			</script>
 		</section>
 		
 		<hr>
 		
 		<section id="skills">
-			<script id="skills-template" type="text/x-handlebars-template">
-				<style>
-					.skills-table {
-						margin: 0px auto;
-						width: 30%;
-					}
-					.skills-table li{
-						list-style-type: none;
-					}
-				</style>
-				<!--List of skills-->
-
-				<h1>Skills</h1>
-
-				<table class="skills-table">
-					{{#each skills}}
-							<tr>
-								<td>{{@key}}</td>
-								<td>
-									<ul>
-										{{#each this}}
-											<li>
-												{{this}}
-											</li>
-										{{/each}}
-									</ul>
-								</td>
-							</tr>
-					{{/each}}
-				</table>
-			</script>
 		</section>
 		<hr>
+
 		<section class="conclusion">
 			<p class="center">
 				Feel free to <a href="mailto:103879u@gmail.com">contact me</a>!

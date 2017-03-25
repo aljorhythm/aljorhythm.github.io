@@ -1,0 +1,7 @@
+<div class="row">
+    {{#each items}}
+        <a class="gallery-item" name="{{@key}}" target="_blank" href="{{this.link}}">
+            <img src="{{this.img}}" class="grid-2"/>
+        </a>
+    {{/each}}
+</div>

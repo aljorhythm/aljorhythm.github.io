@@ -15,6 +15,11 @@
                 "img" : "img/gallery/resume.png",
                 "link" : "https://github.com/aljorhythm/aljorhythm.github.io",
                 "description" : "This profile/resume was self-written!"
+            },
+            "Google Search Results Scraper" : {
+                "img" : "img/gallery/google.png",
+                "link" : "https://github.com/aljorhythm/google-search-stats#demo",
+                "description" : "Retrieve some information about google search results. SEO exercise."
             }
         }
 }
