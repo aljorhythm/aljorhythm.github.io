@@ -33,24 +33,33 @@
 			})
 		}
 
-		var spotlightTemplate;
 		function initSpotlight(data){
-			spotlightTemplate = Handlebars.compile($("#spotlight-template").html());
+			var spotlightTemplate = Handlebars.compile($("#spotlight-template").html())
 			var $spotlight = $("#spotlight")
 			var items = data['items']
-			$galleryItems = $("#gallery a.gallery-item")
-			if(userAgentIsMobile){
+			var $galleryItems = $("#gallery a.gallery-item")
+			if(userAgentIsMobile){ // gallery images are not links if user is mobile
 				$galleryItems.removeAttr("href")
 			}
-			$galleryItems.on('mouseover click', (e)=>{
-				var $item = $(e.currentTarget)
-				$galleryItems.find("img").removeClass("box-shadow")
-				$item.find("img").addClass("box-shadow")
-				var name = $item.attr('name')
-				var data = items[name]
-				data['name'] = name
-				$spotlight.html(spotlightTemplate(data))
-			}).mouseover()
+			var $galleryImgs = $galleryItems.find("img")
+			var spotlightHTMLs = {}
+			for(var key in items){
+				spotlightHTMLs[key] = spotlightTemplate(items[key])
+			}
+			console.log(spotlightHTMLs)
+			$galleryItems.each((_ , item) => {
+				$(item).on('mouseover click', (e)=>{
+					var $item = $(e.currentTarget)
+					var name = $item.attr('name')
+					var data = items[name]
+					data['name'] = name
+					var spotlightHTML = spotlightHTMLs[name]
+					$galleryImgs.removeClass("box-shadow")
+					$item.find("img").addClass("box-shadow")
+					
+					$spotlight.html(spotlightHTML)
+				}).mouseover()
+			})
 		}
 
 		$(document).ready(() => {
