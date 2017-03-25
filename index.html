@@ -44,6 +44,7 @@
 			var $galleryImgs = $galleryItems.find("img")
 			var spotlightHTMLs = {}
 			for(var key in items){
+				items[key]['name'] = key
 				spotlightHTMLs[key] = spotlightTemplate(items[key])
 			}
 			console.log(spotlightHTMLs)
@@ -51,8 +52,6 @@
 				$(item).on('mouseover click', (e)=>{
 					var $item = $(e.currentTarget)
 					var name = $item.attr('name')
-					var data = items[name]
-					data['name'] = name
 					var spotlightHTML = spotlightHTMLs[name]
 					$galleryImgs.removeClass("box-shadow")
 					$item.find("img").addClass("box-shadow")
@@ -123,7 +122,7 @@
 			</div>
 		</script>
 	</section>
-	
+
 	<!-- End container-->
 	
 	<!-- New container-->
