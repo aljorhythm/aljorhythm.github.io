@@ -1,7 +1,24 @@
+<style>
+    .gallery-item img {
+        max-width: 150px;
+    }
+
+    @media screen and (max-height: 640px) {
+        .gallery-item img {
+            max-height: 70px;
+        }
+    }
+
+    @media screen and (max-height: 1000px) {
+        .gallery-item img {
+            max-height: 100px;
+        }
+    }
+</style>
 <div class="row">
     {{#each items}}
         <a class="gallery-item" name="{{@key}}" target="_blank" href="{{this.link}}">
-            <img src="{{this.img}}" class="grid-2"/>
+            {{#if img}} <img src="{{this.img}}" class="grid-2"/> {{else}} {{@key}} {{/if}}
         </a>
     {{/each}}
 </div>
