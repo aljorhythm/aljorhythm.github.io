@@ -20,6 +20,11 @@
                 "img" : "img/gallery/google.png",
                 "link" : "https://github.com/aljorhythm/google-search-stats#demo",
                 "description" : "Retrieve some information about google search results. SEO exercise."
+            },
+            "Tumblr Downloader" : {
+                "img" : "img/gallery/tumblr.png",
+                "link" : "https://github.com/aljorhythm/scraper-tumblr-node#demo",
+                "description" : "Download content from tumblr pages by crawling"
             }
         }
 }
