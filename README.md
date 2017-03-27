@@ -3,8 +3,9 @@
 Webpage is [here](http://aljorhythm.github.io/)
 
 This profile page uses these concepts
-- API (linkedin)
 - Separation of data and view
+- Responsive design
+- Ajax calls
 
 ## Tech stack
 
